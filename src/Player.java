@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.HashMap;
 
 /**
  * Created by DrScott on 10/9/15.
@@ -7,6 +9,9 @@ public class Player {
     String name;
     String weapon;
     String area;
+    ArrayList items = new ArrayList();
+
+
     //////////////////////////////////////////////
     void chooseName() {
         System.out.println("What is your name?");
@@ -37,6 +42,15 @@ public class Player {
             System.out.println("you go into the tunnel");
         } else {
             throw new Exception("you can't go there, dummy");
+        }
+    }
+    void findItem(String item){
+        System.out.println("Found item! Pick it up? y/n?");
+        String s = Game.nextLine();
+        if (s.equals("y")){
+            System.out.println("You found a "+ item);
+            items.add(item);
+
         }
     }
 }

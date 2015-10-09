@@ -4,15 +4,16 @@ import java.util.Scanner;
  * Created by DrScott on 10/8/15.
  */
 public class Game {
-
+static Player player;
     public static void run() throws Exception {
         System.out.println("welcome to the jungle");
-
+        player = new Player();
         while (true) {
-            Player player = new Player();
+
             player.chooseName();
             player.chooseWeapon();
             player.chooseArea();
+            player.findItem("shield");
         }
     }
     static String nextLine() {  //creating a static method to run to save the game
@@ -24,6 +25,13 @@ public class Game {
                 System.out.println("/help    => List available commands");
             } else if (s.equals("/exit")){
                 System.exit(0);
+            } else if (s.equals("/inv")){
+                if (player.items.size()==0){
+                    System.out.println("You have no items. You're a bum. Go find some stuff");
+                }
+                for (Object item : player.items){
+                    System.out.println(item);
+                }
             }
             return nextLine();
         } else {
