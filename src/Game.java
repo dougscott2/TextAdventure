@@ -7,7 +7,7 @@ public class Game {
 static Player player;
     public static void main(String[] args) throws Exception {
         System.out.println("welcome to the jungle");
-        player = new Player();
+       player = new Player();
         while (true) {
 
             player.chooseName();
