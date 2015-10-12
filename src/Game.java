@@ -5,7 +5,7 @@ import java.util.Scanner;
  */
 public class Game {
 static Player player;
-    public static void run() throws Exception {
+    public static void main(String[] args) throws Exception {
         System.out.println("welcome to the jungle");
         player = new Player();
         while (true) {
