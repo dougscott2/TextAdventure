@@ -7,15 +7,16 @@ public class Game {
 static Player player;
     public static void main(String[] args) throws Exception {
         System.out.println("welcome to the jungle");
-       player = new Player();
-        while (true) {
+        player = new Player();
+        player.chooseName();
+        player.chooseWeapon();
+        player.chooseArea();
+        player.findItem("shield");
 
-            player.chooseName();
-            player.chooseWeapon();
-            player.chooseArea();
-            player.findItem("shield");
-        }
+        Enemy ogre = new Enemy("Ogre", 50, 5);
+        player.battle(ogre);
     }
+
     static String nextLine() {  //creating a static method to run to save the game
         Scanner scanner = new Scanner(System.in);
         String s = scanner.nextLine();

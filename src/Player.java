@@ -5,18 +5,20 @@ import java.util.HashMap;
 /**
  * Created by DrScott on 10/9/15.
  */
-public class Player {
-    String name;
+public class Player extends Character{
     String weapon;
     String area;
     ArrayList items = new ArrayList();
 
+    public Player() {
+        health = 100; //health and damage have been declared in Character.java
+        damage = 20;
 
-    //////////////////////////////////////////////
+    }
     void chooseName() {
         System.out.println("What is your name?");
         name = Game.nextLine();
-        System.out.println("Good luck, " + name );
+        System.out.println(String.format("Good luck, %s", name ));
     }
     void chooseWeapon() throws Exception {
         System.out.println("[1] Pick up sword");
@@ -48,7 +50,7 @@ public class Player {
         System.out.println("Found item! Pick it up? y/n?");
         String s = Game.nextLine();
         if (s.equals("y")){
-            System.out.println("You found a "+ item);
+            System.out.println(String.format("You found a %s", item));
             items.add(item);
 
         }
