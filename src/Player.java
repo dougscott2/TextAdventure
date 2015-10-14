@@ -6,7 +6,7 @@ import java.util.HashMap;
  * Created by DrScott on 10/9/15.
  */
 public class Player extends Character{
-    String weapon;
+
     String area;
     ArrayList items = new ArrayList();
 
@@ -18,20 +18,24 @@ public class Player extends Character{
     void chooseName() {
         System.out.println("What is your name?");
         name = Game.nextLine();
-        System.out.println(String.format("Good luck, %s", name ));
+        System.out.println(String.format("Good luck, %s", name.toUpperCase() ));
     }
     void chooseWeapon() throws Exception {
         System.out.println("[1] Pick up sword");
         System.out.println("[2] Pick up mallet");
-        weapon = Game.nextLine();
-        int weaponNum = Integer.valueOf(weapon);
+        int weaponNum = Integer.valueOf(Game.nextLine());
         if(weaponNum == 1) {
-            System.out.println("that's a fine sword");
+            weapon = new Weapon();
+            weapon.name = "Sword";
+            weapon.damage = 10;
         } else if(weaponNum == 2){
-            System.out.println("That's a heavy mallet!");
+            weapon = new Weapon();
+            weapon.name = "Mallet";
+            weapon.damage = 10;
         } else {
             throw new Exception("Invalid weapon, dummy");
         }
+        System.out.println(String.format("Wow, that's a cool %s.", weapon.name.toLowerCase()));
     }
     void chooseArea() throws Exception {System.out.println("[1] Enter the forest?");
         System.out.println("[2] enter the tunnel?");
