@@ -1,0 +1,1 @@
+{"damage":20,"health":80,"name":"Doug","weapon":{}}
