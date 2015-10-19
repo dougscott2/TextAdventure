@@ -6,9 +6,8 @@ import java.util.HashMap;
  * Created by DrScott on 10/9/15.
  */
 public class Player extends Character{
-
     String area;
-    ArrayList items = new ArrayList();
+    ArrayList<String> items = new ArrayList();
 
     public Player() {
         health = 100; //health and damage have been declared in Character.java

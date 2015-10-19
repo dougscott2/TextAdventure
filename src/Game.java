@@ -1,6 +1,5 @@
 import jodd.json.JsonParser;
 import jodd.json.JsonSerializer;
-
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -16,16 +15,14 @@ static final String FILE_NAME = "save.json";  //all caps means its a final varia
         System.out.println("welcome to the jungle");
         player = loadGame();
 
-
-
         if (player == null) {
             player = new Player();
             player.chooseName();
             player.chooseWeapon();
-            player.chooseArea();
-            player.findItem("shield");
+            player.chooseArea();use
         }
-
+        player.findItem("shield");
+        player.findItem("boots");
         Weapon ogreWeapon = new Weapon();
         ogreWeapon.name = "Club";
         ogreWeapon.damage = 5;
@@ -48,7 +45,7 @@ static final String FILE_NAME = "save.json";  //all caps means its a final varia
                 if (player.items.size()==0){
                     System.out.println("You have no items. You're a bum. Go find some stuff");
                 }
-                for (Object item : player.items){
+                for (String item : player.items){
                     System.out.println(item);
                 }
             }
