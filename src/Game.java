@@ -3,6 +3,7 @@ import jodd.json.JsonSerializer;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -14,6 +15,7 @@ static final String FILE_NAME = "save.json";  //all caps means its a final varia
     public static void main(String[] args) throws Exception {
         System.out.println("welcome to the jungle");
         player = loadGame();
+
 
         if (player == null) {
             player = new Player();

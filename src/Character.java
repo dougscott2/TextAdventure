@@ -14,7 +14,6 @@ public class Character {
             opponent.health -= damage + weapon.damage;
             System.out.println(String.format("%s's health: %d, %s's health: %d", name, health, opponent.name,
                     opponent.health));
-
         }
         String deadMessage = "%s has been killed!";
         if(health <=0 ) {
