@@ -19,7 +19,7 @@ static final String FILE_NAME = "save.json";  //all caps means its a final varia
             player = new Player();
             player.chooseName();
             player.chooseWeapon();
-            player.chooseArea();use
+            player.chooseArea();
         }
         player.findItem("shield");
         player.findItem("boots");
